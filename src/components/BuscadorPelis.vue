@@ -6,6 +6,7 @@ const cerca = ref('')
 const resultats = ref([])
 
 const peli = ref(null) 
+const loading = ref(false)
 
 async function ferCerca() {
     resultats.value = await buscar(cerca.value)
@@ -26,6 +27,8 @@ async function verInfo(id) {
         <v-text-field
             v-model="cerca"
             label="Què vols cercar?"
+            clearable
+            @keydown.enter="ferCerca"
         ></v-text-field>
 
         <v-btn
@@ -37,6 +40,7 @@ async function verInfo(id) {
             <v-col
                 v-for="element in resultats":key="element.imdbID"
                 cols="12"
+                sm="6"
                 md="4"
                 align="center"
             >
