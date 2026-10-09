@@ -33,7 +33,6 @@ async function ferCerca() {
                 md="4"
                 align="center"
             >
-                <!-- Substituïm el codi manual per la crida al teu component -->
                 <FitxaPelis :element="element" />
             </v-col>
         </v-row>
