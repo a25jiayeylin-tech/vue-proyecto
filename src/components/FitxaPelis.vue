@@ -18,10 +18,19 @@ async function verInfo(id) {
 </script>
 
 <template>
-  <v-card>
-      <b>{{ element.Title }}</b>
-      <v-img :src="element.Poster" alt="" max-width="150" ></v-img>
-      {{ element.Year }}
+  <v-card class="pa-4 h-100 d-flex flex-column justify-space-between" elevation="2">
+
+      <v-card-title class="text-h6 font-weight-bold px-0 text-wrap text-left">
+        {{ element.Title }}
+      </v-card-title>
+
+      <v-img :src="element.Poster" alt=""  height="250" cover class="rounded-lg my-3"></v-img>
+      
+      <v-card-subtitle >
+        <v-icon icon="mdi-calendar" size="small" class="mr-1"></v-icon>
+        {{ element.Year }}
+      </v-card-subtitle>
+      
       <br>
 
       <v-dialog max-width="500">
@@ -37,11 +46,11 @@ async function verInfo(id) {
 
           <template v-slot:default="{ isActive }">
               <v-card v-if="peli">
-                  <v-card-title>
-                      Detalles de la película
+                  <v-card-title class="text-h5 font-weight-bold pt-2 px-2 text-wrap">
+                      {{ peli.Title }}
                   </v-card-title>
 
-                  <v-card-text>
+                  <v-card-text class="py-2 px-2 text-body-1">
                       <p><b>Género:</b> {{ peli.Genre }}</p>
                       <p><b>Director:</b> {{ peli.Director }}</p>
                       <p><b>Escritores:</b> {{ peli.Writer }}</p>

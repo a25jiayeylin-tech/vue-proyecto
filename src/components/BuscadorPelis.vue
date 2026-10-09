@@ -24,7 +24,8 @@ async function ferCerca() {
         >
             Cercar
         </v-btn>
-        
+        <br>
+        <br>
         <v-row>
             <v-col
                 v-for="element in resultats" :key="element.imdbID"
